@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dups = [1, 2, 3, 4];
+
+        console.log(findDuplicate(dups));
+
+        function findDuplicate(dups) {
+            const set = new Set();
+
+            for (let i = 0; i < dups.length; i++) {
+                if (set.has(dups[i])) {
+                    return true
+                }
+
+                set.add(dups[i]);
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
