@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = "anagram";
+        const b = "magrana";
+        console.log(isAnagram(a, b));
+
+        function isAnagram(a, b) {
+            const count = {};
+
+            if (a.length !== b.length) {
+                return false;
+            }
+
+            for (let i = 0; i < a.length; i++) {
+                const char = a[i];
+
+                if (count[char]) {
+                    count[char]++;
+                } else {
+                    count[char] = 1;
+                }
+            }
+
+            for (let i = 0; i < b.length; i++) {
+                const char = b[i];
+
+                if (!count[char]) {
+                    return false;
+                }
+
+                count[char]--;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
