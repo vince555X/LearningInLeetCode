@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let num = [1, 2, 5, 6];
+        let target = 7;
+        let result = twoSum(num, target) ?? "Not found";
+        console.log(result);
+
+        num = [5, 22, 1, 2];
+        target = 3;
+        result = twoSum(num, target) ?? "Not found";
+        console.log(result);
+
+        num = [5, 22, 10, 2, 6, 7, 1, 31, 12];
+        target = 4;
+        result = twoSum(num, target) ?? "Not found";
+        console.log(result);
+        
+
+
+        function twoSum(num = [], target) {
+            const map = new Map();
+
+            for (let i = 0; i < num.length; i++) {
+                const complement = target - num[i];
+
+                if (map.has(complement)) {
+                    return [map.get(complement), i];
+                }
+                
+                map.set(num[i], i);
+            }
+        }
+    </script>
+</body>
+</html>

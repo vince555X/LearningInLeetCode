@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const stock = [7,6,5,4,3,2,11];
+        const result = computeProfit(stock);
+        if (result === 0) {
+            console.log("No profit");
+        } else {
+            console.log(result);
+        }
+
+        function computeProfit(stock) {
+            let lowest = stock[0];
+            let maxProfit = 0;
+
+            for (let i = 1; i < stock.length; i++) {
+                // update the lowest price
+                if (stock[i] < lowest) {
+                    lowest = stock[i];
+                    console.log(`change the lowest price: ${lowest}`);
+                }
+
+                // compute current profit
+                const currentProfit = stock[i] - lowest;
+                console.log(`${stock[i]} - ${lowest} = ${currentProfit}`);
+
+                // update maximum profit
+                if (currentProfit > maxProfit) {
+                    maxProfit = currentProfit;
+                }
+            }
+            return maxProfit;
+        }
+    </script>
+</body>
+</html>

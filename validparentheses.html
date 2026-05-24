@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const s = ")({}";
+        console.log(isValid(s));
+
+        function isValid(s) {
+            const stack = [];
+
+            for (let i = 0; i < s.length; i++) {
+                const current = s[i];
+
+                // ask opening brackets
+                if (current === "(" || current === "{" || current === "[") {
+                    stack.push(current);
+                    console.log(stack);
+                }
+                // find closing brackets
+                else {
+                    // check the stack if is empty
+                    if (stack.length === 0) {
+                        return false;
+                    }
+
+                    // get the top stack
+                    const top = stack[stack.length - 1];
+                    
+                    console.log(top);
+
+                    // check the matching brackets
+                    if (
+                        current === ")" && top === "(" ||
+                        current === "}" && top === "{" ||
+                        current === "]" && top === "["
+                    ) {
+                        stack.pop()
+                        console.log(stack);
+                    } else {
+                        return false;
+                    }
+                }
+            }
+
+            return stack.length === 0;
+        }
+    </script>
+</body>
+</html>
