@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const numArray1 = [1, 2, 3, 4, 5, 6];
+        const numArray2 = [7, 9, 11, 13];
+        const numArray3 = [10, 20, 30, 41, 55];
+
+        console.log(isEven(numArray1));
+        console.log(isEven(numArray2));
+        console.log(isEven(numArray3));
+
+        function isEven(numbers) {
+            let totalCountEven = 0;
+
+            for (let i = 0; i < numbers.length; i++) {
+                let num = numbers[i];
+                if (num % 2 === 0) totalCountEven++;
+
+            }
+
+            return totalCountEven;
+        }
+    </script>
+</body>
+</html>

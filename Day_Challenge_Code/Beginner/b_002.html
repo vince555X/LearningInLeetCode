@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [5, 2, 8, 1, 4];
+        console.log(findLargeNumber(numbers));
+
+        function findLargeNumber(numbers) {
+            let largeNumber = numbers[0];
+
+            for (let i = 1; i < numbers.length; i++) {
+                let currentNumber = numbers[i];
+                
+                if (currentNumber > largeNumber) {
+                    largeNumber = currentNumber;
+                }
+            }
+
+            return largeNumber;
+        }
+    </script>
+</body>
+</html>

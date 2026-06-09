@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(findSecondLargestNumber([-1, -5, -3, -2]))
+        function findSecondLargestNumber(numbers) {
+            let currentLargestNumber;
+            let secondLargestNumber;
+
+            if (numbers[0] > numbers[1]) {
+                currentLargestNumber = numbers[0];
+                secondLargestNumber = numbers[1];
+            } else {
+                currentLargestNumber = numbers[1];
+                secondLargestNumber = numbers[0];
+            }
+
+            for (let i = 2; i < numbers.length; i ++) {
+                let currentNumber = numbers[i];
+
+                if (currentNumber > currentLargestNumber) {
+                    secondLargestNumber = currentLargestNumber;
+                    currentLargestNumber = currentNumber;
+                } else if (
+                    currentNumber < secondLargestNumber && 
+                    currentNumber !== currentLargestNumber
+                ) {
+                    secondLargestNumber = currentNumber;
+                }
+            }
+
+            return secondLargestNumber;
+        }
+    </script>
+</body>
+</html>
