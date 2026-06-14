@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(firstNonRepeating("abbacc"));
+        function firstNonRepeating(str) {
+            str = str.toLowerCase();
+
+            let countRepeat = 0;
+            for (let i = 0; i < str.length; i++) {
+                let currentChar = str[i];
+                for (let j = 0; j < str.length; j++) {
+                    let nextChar = str[j];
+                    if (currentChar === nextChar) {
+                        countRepeat++;
+                    }
+                }
+                if (countRepeat === 1) {
+                    return currentChar;
+                }
+                countRepeat = 0;
+            }
+
+            return null;
+            
+        }
+    </script>
+</body>
+</html>
